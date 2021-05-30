@@ -16,14 +16,14 @@ This is a challenge project from [Tog Design](https://tog.design) developer team
 
 This repo is based in:
 
-- [Node.js](https://www.mongodb.com)
-- [Next.js](https://passportjs.org)
-- [Typescript](https://nodejs.org)
+- [Node.js](https://nodejs.org/)
+- [Next.js](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - ... _Stay tuned for more_
 
 ## 📁 Libraries
 
-- [Font Awesome](https://socket.io)
+- [Font Awesome](https://fontawesome.com/)
 - ... _More_
 
 ## 🚀 Getting Started
