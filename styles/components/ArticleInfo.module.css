@@ -1,0 +1,74 @@
+.container {
+  font-family: "Arimo", sans-serif;
+  margin-top: 1.5em;
+  display: flex;
+}
+
+.container span {
+  font-weight: 500;
+  font-size: 8px;
+}
+
+.container p {
+  font-weight: 400;
+  font-size: 6px;
+  text-transform: uppercase;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author img {
+  height: 2em;
+  border-radius: 2em;
+  border: var(--yellow) 1px solid;
+}
+
+.authorInfo {
+  display: flex;
+}
+
+.authorInfo div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5em;
+}
+
+.authorInfo button {
+  margin-left: 2em;
+  align-self: flex-start;
+  background: var(--yellow);
+  color: white;
+  border-radius: 0.3em;
+  font-size: 6px;
+  font-family: "Arimo", sans-serif;
+  padding: 0.3em 1em;
+}
+
+.divider {
+  margin-right: 0.4em;
+  height: 100%;
+  width: 0;
+  border-right: var(--cold-gray) 1px solid;
+}
+
+.themes {
+    margin-left: 2em;
+}
+
+.themes,
+.temps {
+  display: flex;
+}
+
+.themes div,
+.temps div {
+  display: flex;
+  flex-direction: column;
+}
+
+.themes div {
+  max-width: 80%;
+}
