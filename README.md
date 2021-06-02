@@ -24,6 +24,9 @@ This repo is based in:
 ## 📁 Libraries
 
 - [Font Awesome](https://fontawesome.com/)
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [js-cookie](https://www.npmjs.com/package/js-cookie)
+- [date-fns](https://date-fns.org)
 - ... _More_
 
 ## 🚀 Getting Started
