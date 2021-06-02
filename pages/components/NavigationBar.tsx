@@ -1,6 +1,7 @@
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "../../styles/components/NavigationBar.module.css"
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import styles from "../../styles/components/NavigationBar.module.css";
 
 export default function NavigationBar() {
   return (
@@ -13,7 +14,9 @@ export default function NavigationBar() {
             className={styles.shoppingBag}
           />
         </div>
-        <button className={styles.signInButton}>Sign In</button>
+        <Link href="/login">
+          <button className={styles.signInButton}>Sign In</button>
+        </Link>
       </div>
     </nav>
   );
