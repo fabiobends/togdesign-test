@@ -1,13 +1,26 @@
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cookie from "js-cookie";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "../../styles/components/NavigationBar.module.css";
 
 export default function NavigationBar() {
+  const [token, setToken] = useState<string>("");
+
+  useEffect(() => {
+    setToken(Cookie.get("token"));
+  }, []);
+
   return (
     <nav className={styles.nav}>
       <img className={styles.logo} src="assets/tog_logo.png" alt="Tog Design" />
       <div>
+        {token && (
+          <Link href="/writing">
+            <button className={styles.writeNowButton}>Write Now</button>
+          </Link>
+        )}
         <div className={styles.circleBagButton}>
           <FontAwesomeIcon
             icon={faShoppingBag}
@@ -15,7 +28,9 @@ export default function NavigationBar() {
           />
         </div>
         <Link href="/login">
-          <button className={styles.signInButton}>Sign In</button>
+          <button className={styles.signInButton}>
+            {token ? "Sign Out" : "Sign In"}
+          </button>
         </Link>
       </div>
     </nav>
