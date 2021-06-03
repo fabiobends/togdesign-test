@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "next-dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "serve": "json-server --watch database.json --port 3001",
+    "dev": "concurrently -n client,server -c green,yellow \"yarn next-dev\" \"yarn serve\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.0",
     "date-fns": "^2.22.1",
     "js-cookie": "^2.2.1",
+    "json-server": "^0.16.3",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
