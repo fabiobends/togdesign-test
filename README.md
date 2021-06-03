@@ -4,7 +4,7 @@
 
 This is a challenge project from [Tog Design](https://tog.design) developer team.
 
-## ⭐ Objetives
+## ⭐ Objectives
 
 - Get the challenge done.
 - Use modern front-end concepts.
@@ -24,9 +24,12 @@ This repo is based in:
 ## 📁 Libraries
 
 - [Font Awesome](https://fontawesome.com/)
+- [Axios](https://axios-http.com/)
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
 - [js-cookie](https://www.npmjs.com/package/js-cookie)
 - [date-fns](https://date-fns.org)
+- [json-server](https://www.npmjs.com/package/json-server)
+- [concurrently](https://www.npmjs.com/package/concurrently)
 - ... _More_
 
 ## 🚀 Getting Started
