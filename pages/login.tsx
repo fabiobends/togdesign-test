@@ -1,26 +1,28 @@
-import Cookie from "js-cookie";
-import { addDays } from "date-fns";
-import auth from "../utils/auth";
-import styles from "../styles/pages/Login.module.css";
-import { useState } from "react";
 import bcrypt from "bcryptjs";
+import { addDays } from "date-fns";
+import Cookie from "js-cookie";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import styles from "../styles/pages/Login.module.css";
+import auth from "../utils/auth";
 
 function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const salt = 10;
+  const router = useRouter();
 
   function signIn(hashCode: string) {
-    Cookie.set("token", hashCode, {
-      expires: addDays(new Date(), 3),
-    });
-  }
+    const token = Cookie.get("token");
 
-  function signOut() {
-    Cookie.remove("token");
+    if (!token) {
+      Cookie.set("token", hashCode, {
+        expires: addDays(new Date(), 3),
+      });
+    }
   }
 
   function handleSubmit(event: React.FormEvent<HTMLButtonElement>) {
+    const salt = 10;
     event.preventDefault();
     bcrypt.hash(password, salt, (err, hash) => {
       if (err) {
@@ -29,7 +31,7 @@ function Login() {
         signIn(hash);
       }
     });
-    console.log(Cookie.get("token"));
+    router.replace('/');
   }
 
   return (
