@@ -1,0 +1,32 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "title": "What was the trend in 2020 and you didn't use it",
+      "alt": "Trends",
+      "text": "Quis exercitation voluptate officia ullamco laborum et veniam ea incididunt Lorem esse commodo cupidatat proident. Occaecat aute fugiat nulla do pariatur dolor anim. Culpa occaecat dolor ad non nulla. Enim cillum dolore pariatur ex aliqua laboris aliqua excepteur pariatur velit minim consequat. Eiusmod eu laborum amet mollit mollit id exercitation mollit Lorem. Officia amet consectetur dolor cillum proident commodo. Non sunt dolor veniam minim laboris laboris occaecat officia officia velit tempor.",
+      "path": "trends"
+    },
+    {
+      "id": 2,
+      "title": "How to implement design thinking process",
+      "alt": "Design Thinking",
+      "text": "Officia eiusmod eu amet ullamco. Quis aliquip adipisicing laborum aliquip tempor ipsum do dolor nulla cillum est tempor qui. Dolore commodo tempor consequat tempor nisi irure sunt dolor veniam ea labore enim. Nostrud dolor mollit dolor tempor deserunt mollit proident ipsum cupidatat culpa fugiat.",
+      "path": "designThinking"
+    },
+    {
+      "id": 3,
+      "title": "A nice article about Design Sprint",
+      "alt": "Design Sprint",
+      "text": "Id culpa incididunt ullamco duis magna tempor veniam veniam laboris exercitation qui. Duis pariatur amet id et anim. Cillum mollit eiusmod elit duis non magna eu ea id cupidatat est dolor. Laborum aute eu dolore esse culpa do. Eu nulla velit cupidatat enim magna consequat aute commodo culpa cillum. Mollit proident cillum culpa mollit nisi labore amet. Officia culpa nisi minim in culpa laboris dolor qui sit sint dolor anim esse.",
+      "path": "designSprint"
+    },
+    {
+      "id": 4,
+      "title": "What can we do? Some design categories",
+      "alt": "Design Types",
+      "text": "Esse laboris deserunt qui est elit et magna ut reprehenderit eiusmod reprehenderit laborum. Reprehenderit laboris ad quis consectetur Lorem quis commodo Lorem eiusmod. Duis minim proident reprehenderit labore aliqua commodo voluptate dolor. Amet sint ullamco magna ut dolor consequat culpa.",
+      "path": "designTypes"
+    }
+  ]
+}

@@ -1,9 +1,32 @@
+import axios, { AxiosResponse } from "axios";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import styles from "../styles/pages/Home.module.css";
-import NavigationBar from "./components/NavigationBar";
 import HomeCard from "./components/HomeCard";
+import NavigationBar from "./components/NavigationBar";
+
+interface cardProps {
+  id: number;
+  title: string;
+  text: string;
+  path: string;
+  alt: string;
+}
 
 export default function Home() {
+  // available only for this purpose...
+  const url = "http://localhost:3001/cards";
+  const [cards, setCards] = useState<cardProps[]>();
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response: AxiosResponse<cardProps[]>) => {
+        setCards(response.data);
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,26 +35,15 @@ export default function Home() {
       <NavigationBar />
       <main className={styles.main}>
         <div className={styles.cards}>
-          <HomeCard
-            title={"What was the trend in 2020 and you didn't use it"}
-            alt="Trends"
-            image="trends"
-          />
-          <HomeCard
-            title={"How to implement design thinking process"}
-            alt="Design Thinking"
-            image="designThinking"
-          />
-          <HomeCard
-            title={"A nice article about Design Sprint"}
-            alt="Design Sprint"
-            image="designSprint"
-          />
-          <HomeCard
-            title={"What can we do? Some design categories"}
-            alt="Design Types"
-            image="designTypes"
-          />
+          {cards &&
+            cards.map((element) => (
+              <HomeCard
+                key={element.id}
+                title={element.title}
+                alt={element.alt}
+                image={element.path}
+              />
+            ))}
         </div>
         <div className={styles.sideBar}>
           <div className={styles.topic}>
