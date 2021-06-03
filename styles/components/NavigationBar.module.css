@@ -25,13 +25,22 @@
   height: 18px;
 }
 
-.signInButton {
-  font-family: 'Arimo', sans-serif;
-  font-size: 12px;
+.nav button {
   font-weight: bold;
-  margin-left: 2em;
+  font-size: 12px;
+  font-family: "Arimo", sans-serif;
   padding: 1em 1.8em;
   border-radius: 0.8rem;
   color: white;
+  cursor: pointer;
+}
+
+.signInButton {
+  margin-left: 2em;
   background: var(--purple);
+}
+
+.writeNowButton {
+  background: var(--cyan);
+  margin-right: 4em;
 }
