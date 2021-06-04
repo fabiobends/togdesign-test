@@ -12,6 +12,12 @@ This is a challenge project from [Tog Design](https://tog.design) developer team
 - Get hired! (of course)
 - ... _More content soon_
 
+## ⚛️ React.js concepts
+
+- Apply HOC structure.
+- Implement hooks from React and Next.
+- Style with CSS Modules.
+
 ## 💻 Technologies
 
 This repo is based in:
