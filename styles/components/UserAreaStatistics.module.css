@@ -1,0 +1,6 @@
+.content {
+  font-family: "Arimo", sans-serif;
+  margin-left: 3em;
+  width: 400px;
+  background: var(--cold-gray);
+}
