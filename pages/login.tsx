@@ -12,18 +12,15 @@ function Login() {
   const router = useRouter();
 
   function signIn(hashCode: string) {
-    const token = Cookie.get("token");
-
-    if (!token) {
-      Cookie.set("token", hashCode, {
-        expires: addDays(new Date(), 3),
-      });
-    }
+    Cookie.set("token", hashCode, {
+      expires: addDays(new Date(), 3),
+    });
   }
 
   function handleSubmit(event: React.FormEvent<HTMLButtonElement>) {
-    const salt = 10;
     event.preventDefault();
+
+    const salt = 10;
     bcrypt.hash(password, salt, (err, hash) => {
       if (err) {
         throw err;
@@ -31,7 +28,7 @@ function Login() {
         signIn(hash);
       }
     });
-    router.replace('/');
+    router.replace("/dashboard");
   }
 
   return (

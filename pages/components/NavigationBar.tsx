@@ -29,7 +29,7 @@ export default function NavigationBar() {
         </div>
         <Link href="/login">
           <button className={styles.signInButton}>
-            {token ? "Sign Out" : "Sign In"}
+            {token ? "Logout" : "Sign In"}
           </button>
         </Link>
       </div>
