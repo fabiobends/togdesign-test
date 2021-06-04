@@ -1,0 +1,70 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2em;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* background: white; */
+}
+
+.container p {
+  font-size: 18px;
+}
+
+.dashBoardContainer {
+  margin-left: 3em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashBoardContainer > div {
+  padding: 1em 1.5em;
+  border-radius: 20px;
+  background: white;
+}
+
+.graphics {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.graphics p {
+  margin-bottom: 0.6em;
+}
+
+.graphics img {
+  align-self: center;
+  width: 99%;
+}
+
+.container table {
+  margin-left: 0.5em;
+  width: 90%;
+  margin-top: 1.2em;
+  font-size: 14px;
+  border-collapse: separate;
+}
+
+.container th,
+.container td {
+  padding: 10px 0;
+  text-align: left;
+  vertical-align: top;
+  border-left: 90px solid #fff;
+}
+
+.container tr > td:first-child,
+.container tr > th:first-child {
+  border: 0px;
+  width: 200px;
+  text-justify: start;
+}
+
+.container tr {
+  width: 100%;
+}
