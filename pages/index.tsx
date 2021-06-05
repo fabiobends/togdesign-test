@@ -2,16 +2,9 @@ import axios, { AxiosResponse } from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/pages/Home.module.css";
+import { cardProps } from "../types";
 import HomeCard from "./components/HomeCard";
 import NavigationBar from "./components/NavigationBar";
-
-interface cardProps {
-  id: number;
-  title: string;
-  text: string;
-  path: string;
-  alt: string;
-}
 
 export default function Home() {
   // available only for this purpose...
@@ -35,15 +28,7 @@ export default function Home() {
       <NavigationBar />
       <main className={styles.main}>
         <div className={styles.cards}>
-          {cards &&
-            cards.map((element) => (
-              <HomeCard
-                key={element.id}
-                title={element.title}
-                alt={element.alt}
-                image={element.path}
-              />
-            ))}
+          {cards && cards.map((element) => <HomeCard {...element} />)}
         </div>
         <div className={styles.sideBar}>
           <div className={styles.topic}>
