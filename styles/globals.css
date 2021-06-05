@@ -9,6 +9,10 @@
   --slightly-white: #f5f6f9;
 }
 
+::placeholder {
+  color: #aeaeae;
+}
+
 a {
   color: inherit;
   text-decoration: none;

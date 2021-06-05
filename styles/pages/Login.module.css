@@ -36,8 +36,8 @@
   outline: none;
 }
 
-.container input[placeholder] {
-  color: #aeaeae;
+.container input {
+  color: #17181d;
 }
 
 .container input:focus {
