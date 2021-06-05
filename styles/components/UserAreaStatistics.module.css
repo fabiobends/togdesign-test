@@ -1,6 +1,64 @@
 .content {
+  border-radius: 1.2em;
   font-family: "Arimo", sans-serif;
   margin-left: 3em;
+  padding: 4em;
   width: 400px;
-  background: var(--cold-gray);
+  display: flex;
+  flex-direction: column;
+  background: #ecedf3;
 }
+
+.currentPage,
+.otherPages {
+  display: flex;
+  align-items: center;
+}
+
+.currentPage {
+  flex: 0.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+.currentPage p {
+  margin-left: 1em;
+  font-size: 12px;
+  color: #17181d;
+}
+
+.otherPages {
+  flex: 0.3;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentIcon {
+  background: var(--yellow);
+}
+
+.ordinaryIcon {
+  background: white;
+}
+
+.actions i {
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+
+.currentPage i {
+  background: var(--yellow);
+}
+
+.otherPages i {
+  cursor: pointer;
+  background: white;
+}
+
+.barsContainer {
+  margin-top: 2em;
+}
+

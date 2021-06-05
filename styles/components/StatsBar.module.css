@@ -1,0 +1,35 @@
+.row {
+  margin-top: 3em;
+  font-family: "Arimo", sans-serif;
+}
+
+.row .title {
+  font-size: 10px;
+  opacity: 50%;
+}
+
+.stats {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.stats span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stats > div {
+  flex: 0.65;
+  align-self: flex-end;
+  height: 0.25em;
+  border-radius: 2em;
+  background: var(--cold-gray);
+  display: flex;
+}
+
+.percentage {
+  border-radius: 2em;
+}
+
