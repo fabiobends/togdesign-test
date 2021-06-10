@@ -21,7 +21,7 @@
   font-family: "Bai Jamjuree", sans-serif;
   font-weight: 600;
   font-size: 32px;
-  margin-bottom: 1.8em;
+  margin-bottom: 2em;
   color: #191919;
   text-shadow: -2px 2px var(--cold-gray);
 }
@@ -45,7 +45,7 @@
 }
 
 .container input + input {
-  margin-top: 4em;
+  margin-top: 3.8em;
 }
 
 .container p {
@@ -58,8 +58,9 @@
 .submitButton {
   font-size: 14px;
   font-weight: 500;
-  width: 230px;
-  padding: 0.8em 0;
+  align-self: center;
+  /* width: 230px; */
+  padding: 0.7em 6em;
   margin: 0 auto;
   background: var(--purple);
   color: white;

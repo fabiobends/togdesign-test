@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   padding: 1em;
-  max-width: 47%;
+  max-width: 42%;
   margin-bottom: 2em;
-  margin-right: 1.5em;
+  margin-left: 2em;
   border-radius: 2em;
 }
 
