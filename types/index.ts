@@ -6,7 +6,10 @@ export interface rowStatsProps {
 }
 
 export interface cardProps {
-  alt: string;
-  path: string;
+  id: string;
   title: string;
+  url_image: string;
+  publisher: string;
+  author: string;
+  themes: string[];
 }

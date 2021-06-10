@@ -2,12 +2,12 @@ import styles from "../../styles/components/HomeCard.module.css";
 import { cardProps } from "../../types";
 import ArticleInfo from "./ArticleInfo";
 
-export default function HomeCard({ alt, path, title }: cardProps) {
+export default function HomeCard(props: cardProps) {
   return (
     <div className={styles.container}>
-      <img src={`assets/${path}/regular.png`} alt={alt} />
-      <h1>{title}</h1>
-      <ArticleInfo />
+      <img src={props.url_image} alt={props.title} />
+      <h1>{props.title}</h1>
+      <ArticleInfo {...props}  />
     </div>
   );
 }
