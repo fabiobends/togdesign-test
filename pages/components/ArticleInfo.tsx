@@ -1,17 +1,18 @@
 import styles from "../../styles/components/ArticleInfo.module.css";
+import { cardProps } from "../../types";
 
-export default function ArticleInfo() {
+export default function ArticleInfo({ themes, author }: cardProps) {
   return (
     <div className={styles.container}>
       <div className={styles.author}>
         <img
           className={styles.authorAvatar}
-          src="assets/author/regular.png"
+          src="http://localhost:3333/avatar"
           alt="Author"
         />
         <div className={styles.authorInfo}>
           <div>
-            <span>Daniel Alves</span>
+            <span>{author}</span>
             <p>Product Design</p>
           </div>
           <button>Follow</button>
@@ -21,7 +22,7 @@ export default function ArticleInfo() {
         <div className={styles.divider}></div>
         <div>
           <p>Themes</p>
-          <span>UX Design, Business, Sales, User Research</span>
+          <span>{themes}</span>
         </div>
       </div>
       <div className={styles.temps}>

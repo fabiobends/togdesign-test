@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "next-dev": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "serve": "json-server --watch database.json --port 3001",
-    "dev": "concurrently -n client,server -c green,yellow \"yarn next-dev\" \"yarn serve\""
+    "both-dev": "concurrently -n client,server -c green,yellow \"yarn next-dev\" \"yarn serve\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

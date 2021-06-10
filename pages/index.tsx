@@ -8,13 +8,14 @@ import NavigationBar from "./components/NavigationBar";
 
 export default function Home() {
   // available only for this purpose...
-  const url = "http://localhost:3001/cards";
+  const url = "http://localhost:3333/articles";
   const [cards, setCards] = useState<cardProps[]>();
 
   useEffect(() => {
     axios
       .get(url)
       .then((response: AxiosResponse<cardProps[]>) => {
+        console.log(response.data);
         setCards(response.data);
       })
       .catch((e) => console.log(e));
