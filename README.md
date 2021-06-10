@@ -8,7 +8,6 @@ This is a challenge project from [Tog Design](https://tog.design) developer team
 
 - Get the challenge done.
 - Use modern front-end concepts.
-- Implement back-end tasks.
 - Get hired! (of course)
 - ... _More content soon_
 
@@ -38,13 +37,25 @@ This repo is based in:
 - [concurrently](https://www.npmjs.com/package/concurrently)
 - ... _More_
 
+## 📋 Prototype
+
+If you want to see the prototype of this project, [click here](https://xd.adobe.com/view/424dc0f2-ed3d-4cd5-97bc-bc0379af3997-171e/). 
+
+
+
 ## 🚀 Getting Started
 
 - Run the development server:
 
 ```bash
+# for npm users
+npm install
+# then 
 npm run dev
-# or
+
+# for yarn users
+yarn
+# then
 yarn dev
 ```
 
