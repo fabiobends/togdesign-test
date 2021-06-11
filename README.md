@@ -16,6 +16,7 @@ This is a challenge project from [Tog Design](https://tog.design) developer team
 - Apply HOC structure.
 - Implement hooks from React and Next.
 - Style with CSS Modules.
+- Use controlled inputs.
 
 ## 💻 Technologies
 
