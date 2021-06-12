@@ -11,12 +11,11 @@ export default function Create() {
     setToggle(!toggle);
   }
 
-  function submitArticle(event){
+  function submitArticle(event) {
     console.log(event);
-
   }
   return (
-    <div className={styles.container}>
+    <div className={styles.containerArticle}>
       <NavigationArticle />
       <form onSubmit={submitArticle} className={styles.form}>
         <i onClick={handleToggle}>
@@ -24,7 +23,14 @@ export default function Create() {
         </i>
         <div>
           <input type="text" placeholder="title" name="title"></input>
-          <textarea name="content" placeholder="Tell your story..."></textarea>
+          <div>
+            <textarea
+              name="content"
+              placeholder="Tell your story..."
+              // cols={100}
+              // rows={20}
+            />
+          </div>
         </div>
       </form>
     </div>

@@ -1,10 +1,11 @@
-.container {
+.containerArticle {
   display: flex;
   font-family: "Arimo", sans-serif;
   min-height: 100vh;
   padding: 2em 0;
   flex-direction: column;
   align-items: center;
+  background: var(--slightly-white);
 }
 
 .form {
@@ -18,8 +19,8 @@
 
 .form i {
   position: absolute;
-  width: 2em;
-  height: 2em;
+  width: 2.2em;
+  height: 2.2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,3 +36,24 @@
   color: #B3B3B1;
 }
 
+.form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: blue 1px solid; */
+}
+
+.form div input {
+  border: none; 
+  background:none;
+  outline: none;
+}
+
+.form div textarea {
+  border: none; 
+  flex: 1;
+  background: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
