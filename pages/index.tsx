@@ -1,19 +1,18 @@
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/pages/Home.module.css";
 import { cardProps } from "../types";
+import api from "../utils/api";
 import HomeCard from "./components/HomeCard";
 import NavigationBar from "./components/NavigationBar";
 
 export default function Home() {
-  // available only for this purpose...
-  const url = "http://localhost:3333/articles";
   const [cards, setCards] = useState<cardProps[]>();
 
   useEffect(() => {
-    axios
-      .get(url)
+    api
+      .get('/articles')
       .then((response: AxiosResponse<cardProps[]>) => {
         console.log(response.data);
         setCards(response.data);
