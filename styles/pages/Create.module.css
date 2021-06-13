@@ -8,52 +8,125 @@
   background: var(--slightly-white);
 }
 
+.navArticle {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: yellow 1px solid; */
+}
+
+.navArticle div {
+  display: flex;
+  align-items: center;
+}
+
+.navArticle .logo {
+  height: 40px;
+}
+
+.navArticle button {
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Arimo", sans-serif;
+  padding: 0.9em 2.5em;
+  border-radius: 0.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+.submitArticle {
+  margin-left: 2em;
+  background: var(--purple);
+}
+
+.cancelArticle {
+  background: var(--cold-gray);
+  opacity: 50%;
+  margin-right: 2em;
+}
+
 .form {
   margin-top: 3em;
-  border: yellow 1px solid;
+  /* border: black 1px solid; */
   flex: 1;
   width: 50%;
   display: flex;
   position: relative;
 }
 
-.form i {
+.form .icons {
   position: absolute;
-  width: 2.2em;
-  height: 2.2em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* border: yellow 1px solid; */
+  background: var(--slightly-white);
+  height: 3em;
+  min-width: 2.5em;
+  top: 55px;
+  left: -60px;
+}
+
+.form .icons i {
+  margin: 0 0.3em;
+  height: 2.4em;
+  width: 2.4em;
+  border: blue 1px solid;
+  display: grid;
+  place-items: center;
+  color: #b3b3b1;
+  border: 1px solid #b3b3b1;
   font-size: 12px;
   border-radius: 2em;
-  border: 1px solid #B3B3B1;
-  top: 40px;
-  left: -50px;
-  color: #B3B3B1;
+  transition: 0.2s all ease-in;
+}
+
+.form .icons i:hover {
+  filter: brightness(120%);
+}
+
+.form .icons div {
+  display: flex;
+}
+
+.form .icons div div {
+  margin-left: 1em;
 }
 
 .form h1 {
-  color: #B3B3B1;
+  color: #b3b3b1;
 }
 
-.form div {
+.form .text {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* border: blue 1px solid; */
 }
 
-.form div input {
-  border: none; 
-  background:none;
+.form .text input {
+  border: none;
+  background: none;
   outline: none;
+  overflow: visible;
+  font-size: 40px;
+  font-family: "Arimo", sans-serif;
 }
 
-.form div textarea {
-  border: none; 
+.form .text div {
+  width: 100%;
   flex: 1;
+}
+
+.form .text textarea {
+  width: 100%;
+  border: none;
+  font-family: "Arimo", sans-serif;
   background: none;
   outline: none;
   resize: none;
   overflow: hidden;
+}
+
+.form .text div {
+  margin-top: 1.5em;
 }
