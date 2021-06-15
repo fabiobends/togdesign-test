@@ -1,11 +1,12 @@
 import {
-  faPlus,
-  faTimes,
   faCamera,
-  faSearch,
-  faPlay,
+
+
   faCode,
-  faEllipsisH,
+  faEllipsisH, faPlay, faPlus,
+
+
+  faSearch, faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -14,7 +15,7 @@ import api from "../utils/api";
 
 export default function Create() {
   const [toggle, setToggle] = useState(true);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<File>(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -22,14 +23,13 @@ export default function Create() {
     setToggle(!toggle);
   }
 
-  function submitArticle(event: React.FormEvent<HTMLFormElement>) {
+  function submitArticle() {
     event.preventDefault();
-    let themes = ["UX Design", "Business", "sales", "User Research"];
+    let themes = ["UX Design", "Business", "Sales", "User Research"];
     let author = "Daniel Alves";
     let price = 10.9;
     let sales = 100;
     let publisher = "Tog Design";
-    console.log(image);
     let data = {
       themes,
       price,
@@ -42,7 +42,7 @@ export default function Create() {
     };
     api
       .post("/article", data)
-      .then((response) => console.log(response))
+      .then((response) => console.log(response.data))
       .catch((e) => console.log(e));
   }
 
@@ -53,7 +53,7 @@ export default function Create() {
           className={styles.logo}
           src="assets/tog_logo.png"
           alt="Tog Design"
-        />
+        />  
         <div>
           <button className={styles.cancelArticle}>Cancel</button>
           <button type="submit" className={styles.submitArticle}>
@@ -82,7 +82,9 @@ export default function Create() {
                     type="file"
                     name="image"
                     id="image"
-                    onChange={(ev) => setImage(ev.target.files[0])}
+                    onChange={(ev) =>
+                      setImage((ev.target as HTMLInputElement).files[0])
+                    }
                     style={{ display: "none" }}
                   />
                 </i>
