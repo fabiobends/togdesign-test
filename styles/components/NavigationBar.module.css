@@ -15,9 +15,11 @@
 }
 
 .circleBagButton {
+  cursor: pointer;
   padding: 1em;
   border-radius: 50%;
   background: var(--cold-gray);
+  opacity: 50%;
 }
 
 .shoppingBag {

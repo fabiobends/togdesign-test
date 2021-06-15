@@ -17,16 +17,18 @@ export default function NavigationBar() {
       <img className={styles.logo} src="assets/tog_logo.png" alt="Tog Design" />
       <div>
         {token && (
-          <Link href="/writing">
+          <Link href="/create">
             <button className={styles.writeNowButton}>Write Now</button>
           </Link>
         )}
-        <div className={styles.circleBagButton}>
-          <FontAwesomeIcon
-            icon={faShoppingBag}
-            className={styles.shoppingBag}
-          />
-        </div>
+        <Link href="/cart">
+          <div className={styles.circleBagButton}>
+            <FontAwesomeIcon
+              icon={faShoppingBag}
+              className={styles.shoppingBag}
+            />
+          </div>
+        </Link>
         <Link href="/login">
           <button className={styles.signInButton}>
             {token ? "Logout" : "Sign In"}
