@@ -3,19 +3,19 @@ import { rowStatsProps } from "../../types";
 
 export default function StatsBar({
   color,
-  number,
-  percentage,
+  amount,
+  progress,
   title,
 }: rowStatsProps) {
   return (
     <div className={styles.row}>
       <p className={styles.title}>{title}</p>
       <div className={styles.stats}>
-        <span>{number}</span>
+        <span>{amount}</span>
         <div className={styles.bar}>
           <div
             className={styles.percentage}
-            style={{ backgroundColor: color, width: percentage + "%" }}
+            style={{ backgroundColor: color, width: progress + "%" }}
           ></div>
         </div>
       </div>

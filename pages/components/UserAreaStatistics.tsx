@@ -4,41 +4,23 @@ import {
   faFeather
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { useState } from "react";
 import styles from "../../styles/components/UserAreaStatistics.module.css";
 import { rowStatsProps } from "../../types";
+import api from "../../utils/api";
 import StatsBar from "../components/StatsBar";
 
 export default function UserAreaStatistics() {
-  const rowTest1: rowStatsProps = {
-    color: "cyan",
-    number: 25,
-    percentage: 25,
-    title: "Published articles",
-  };
-  const rowTest2: rowStatsProps = {
-    color: "yellow",
-    number: 25,
-    percentage: 80,
-    title: "Published articles",
-  };
-  const rowTest3: rowStatsProps = {
-    color: "green",
-    number: 25,
-    percentage: 40,
-    title: "Published articles",
-  };
-  const rowTest4: rowStatsProps = {
-    color: "blue",
-    number: 25,
-    percentage: 80,
-    title: "Published articles",
-  };
-  const rowTest5: rowStatsProps = {
-    color: "blue",
-    number: 25,
-    percentage: 80,
-    title: "Published articles",
-  };
+  const [stats, setStats] = useState<rowStatsProps[]>();
+
+  api
+    .get("/dashboard")
+    .then((response) => {
+      setStats(response.data);
+    })
+    .catch((e) => console.log(e));
+
   return (
     <div className={styles.content}>
       <div className={styles.actions}>
@@ -52,20 +34,23 @@ export default function UserAreaStatistics() {
           <p>Dashboard</p>
         </div>
         <div className={styles.otherPages}>
-          <i>
-            <FontAwesomeIcon className={styles.ordinaryIcon} icon={faBook} />
-          </i>
-          <i>
-            <FontAwesomeIcon className={styles.ordinaryIcon} icon={faFeather} />
-          </i>
+          <Link href="/purchased-articles">
+            <i>
+              <FontAwesomeIcon className={styles.ordinaryIcon} icon={faBook} />
+            </i>
+          </Link>
+          <Link href="/articles-you-wrote">
+            <i>
+              <FontAwesomeIcon
+                className={styles.ordinaryIcon}
+                icon={faFeather}
+              />
+            </i>
+          </Link>
         </div>
       </div>
       <div className={styles.barsContainer}>
-        <StatsBar {...rowTest1} />
-        <StatsBar {...rowTest2} />
-        <StatsBar {...rowTest3} />
-        <StatsBar {...rowTest4} />
-        <StatsBar {...rowTest5} />
+        {stats && stats.map((element) => <StatsBar {...element} />)}
       </div>
     </div>
   );

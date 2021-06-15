@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from "../styles/pages/Dashboard.module.css";
 import UserAreaStatistics from "./components/UserAreaStatistics";
 import userAreaWrapper from "./shared/userAreaWrapper";
@@ -5,6 +6,9 @@ import userAreaWrapper from "./shared/userAreaWrapper";
 function Dashboard() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Dashboard</title>
+      </Head>
       <div className={styles.dashBoardContainer}>
         <div className={styles.graphics}>
           <p>Your sales for the last 7 days</p>
