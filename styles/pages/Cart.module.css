@@ -1,0 +1,164 @@
+.cartContainer {
+  position: relative;
+  background: var(--slightly-white);
+  display: flex;
+  min-height: 100vh;
+}
+
+.resume {
+  font-family: "Montserrat", sans-serif;
+  width: 27%;
+  background: #ecedf3;
+  padding: 0 3em;
+  display: flex;
+  flex-direction: column;
+  /* border: red 1px solid; */
+}
+
+.wrapper {
+  margin-top: 10em;
+}
+
+.yourCart {
+  flex: 1;
+  /* border: blue 1px solid; */
+}
+
+.navbar {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: green 1px solid; */
+}
+
+.wrapper div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper > button {
+  width: 100%;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.wrapper > button:hover {
+  filter: brightness(120%);
+}
+
+.resumeTitle {
+  font-size: 24px;
+  margin-bottom: 2.5em;
+}
+
+.wrapper input {
+  padding: 1em;
+  width: 100%;
+  background: inherit;
+  border: #0000008f 1px solid;
+  border-radius: 0.4em;
+  margin-bottom: 2em;
+}
+
+.wrapper div span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wrapper div .subTotal {
+  font-size: 14px;
+}
+
+.totalAmount {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.divider {
+  height: 0;
+  width: 100%;
+  opacity: 20%;
+  border-top: #292c35 1px solid;
+  background-color: #292c35;
+  margin: 1.2em 0;
+}
+
+.checkout {
+  margin-top: 2em;
+  background: #292c35;
+  color: var(--yellow);
+}
+
+.keepBuying {
+  border: #292c35 1px solid;
+  color: #292c35;
+}
+
+.spacer {
+  margin-bottom: 3em;
+}
+
+.yourCart {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10em;
+  padding: 0 2em 0 4em;
+}
+
+.yourCart .title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 2em;
+}
+
+.yourCart table {
+  margin-left: 0.5em;
+  width: 90%;
+  margin-top: 1.2em;
+  font-size: 14px;
+  border-collapse: separate;
+}
+
+.yourCart th,
+.yourCart td {
+  padding: 10px 0;
+  text-align: left;
+  vertical-align: top;
+  border-left: 90px solid var(--slightly-white);
+}
+
+.yourCart tr > td:first-child,
+.yourCart tr > th:first-child {
+  border: 0px;
+  width: 200px;
+  text-justify: start;
+}
+
+.yourCart tr {
+  width: 100%;
+}
+
+.yourCart .subTotalCart {
+  font-size: 14px;
+  margin-right: 13.5em;
+  display: flex;
+  align-self: flex-end;
+}
+
+.subTotalCart span {
+  font-weight: 500;
+  margin-right: 3em;
+}
+
+.trashButton {
+  cursor: pointer;
+}
