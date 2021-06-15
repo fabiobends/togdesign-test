@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import { addDays } from "date-fns";
 import Cookie from "js-cookie";
+import Head from 'next/head';
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../styles/pages/Login.module.css";
@@ -33,6 +34,9 @@ function Login() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Sign In</title>
+      </Head>
       <div className={styles.logo}>
         <img src="assets/tog_logo.png" alt="Tog Design" />
       </div>
