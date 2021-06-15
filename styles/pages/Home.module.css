@@ -17,7 +17,7 @@
 
 .cards {
   width: 100%;
-  /* border: blue 2px solid; */
+  /* border: pink 2px solid; */
   padding: 2.8em 0;
   margin-left: 1.2em;
   /* margin-right: 5%; */
@@ -26,6 +26,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.cards article {
+  width: 45%;
+  /* align-self: flex-start; */
+  /* border: 1px solid green; */
 }
 
 .sideBar {

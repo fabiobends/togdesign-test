@@ -1,5 +1,7 @@
 import { AxiosResponse } from "axios";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/pages/Home.module.css";
 import { cardProps } from "../types";
@@ -8,11 +10,12 @@ import HomeCard from "./components/HomeCard";
 import NavigationBar from "./components/NavigationBar";
 
 export default function Home() {
+  const router = useRouter();
   const [cards, setCards] = useState<cardProps[]>();
 
   useEffect(() => {
     api
-      .get('/articles')
+      .get("/articles")
       .then((response: AxiosResponse<cardProps[]>) => {
         console.log(response.data);
         setCards(response.data);
@@ -28,7 +31,14 @@ export default function Home() {
       <NavigationBar />
       <main className={styles.main}>
         <div className={styles.cards}>
-          {cards && cards.map((element) => <HomeCard {...element} />)}
+          {cards &&
+            cards.map((element) => (
+              <Link key={element.id} href={`/article/${element.id}`}>
+                <article>
+                  <HomeCard {...element} />
+                </article>
+              </Link>
+            ))}
         </div>
         <div className={styles.sideBar}>
           <div className={styles.topic}>
