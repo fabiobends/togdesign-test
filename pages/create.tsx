@@ -1,12 +1,11 @@
 import {
   faCamera,
-
-
   faCode,
-  faEllipsisH, faPlay, faPlus,
-
-
-  faSearch, faTimes
+  faEllipsisH,
+  faPlay,
+  faPlus,
+  faSearch,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -53,7 +52,7 @@ export default function Create() {
           className={styles.logo}
           src="assets/tog_logo.png"
           alt="Tog Design"
-        />  
+        />
         <div>
           <button className={styles.cancelArticle}>Cancel</button>
           <button type="submit" className={styles.submitArticle}>

@@ -1,8 +1,26 @@
 # Tog Design Test
 
+
 ## :thinking: What is that about?
 
 This is a challenge project from [Tog Design](https://tog.design) developer team.
+
+## 📷 Some screenshots
+__Home page__
+<p align="center">
+ <img src=".github/home_page_tog.png" alt="See the articles" />
+</p>
+
+__Sign In page__
+<p align="center">
+ <img src=".github/login_page_tog.png" alt="Sign in" />
+</p>
+
+
+__Dashboard page__
+<p align="center">
+ <img src=".github/dashboard_page_tog.png" alt="Sign in" />
+</p>
 
 ## ⭐ Objectives
 
@@ -46,7 +64,9 @@ If you want to see the prototype of this project, [click here](https://xd.adobe.
 
 ## 🚀 Getting Started
 
-- Run the development server:
+- Make sure the [back-end server](https://github.com/fabiobends/back-end-togdesign-test) is beforehand running.
+
+- Run this development server (front-end):
 
 ```bash
 # for npm users
