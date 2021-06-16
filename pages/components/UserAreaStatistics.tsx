@@ -11,11 +11,36 @@ import { rowStatsProps } from "../../types";
 import api from "../../utils/api";
 import StatsBar from "../components/StatsBar";
 
-export default function UserAreaStatistics() {
+export default function UserAreaStatistics({ path }) {
   const [stats, setStats] = useState<rowStatsProps[]>();
 
+  const settings = {
+    page: "Purchased Articles",
+    path1: "/dashboard",
+    path2: "/articles-you-wrote",
+    currentIcon: faBook,
+    icon1: faChartLine,
+    icon2: faFeather,
+  };
+
+  if (path === "/dashboard") {
+    settings.page = "Dashboard";
+    settings.currentIcon = faChartLine;
+    settings.icon1 = faBook;
+    settings.icon2 = faFeather;
+    settings.path1 = "/purchased-articles";
+    settings.path2 = "/articles-you-wrote";
+  }
+  if (path === "/articles-you-wrote") {
+    settings.page = "Articles you wrote";
+    settings.currentIcon = faFeather;
+    settings.icon1 = faChartLine;
+    settings.icon2 = faBook;
+    settings.path1 = "/dashboard";
+    settings.path2 = "/purchased-articles";
+  }
   api
-    .get("/dashboard")
+    .get(path)
     .then((response) => {
       setStats(response.data);
     })
@@ -28,22 +53,25 @@ export default function UserAreaStatistics() {
           <i>
             <FontAwesomeIcon
               className={styles.currentIcon}
-              icon={faChartLine}
+              icon={settings.currentIcon}
             />
           </i>
-          <p>Dashboard</p>
+          <p>{settings.page}</p>
         </div>
         <div className={styles.otherPages}>
-          <Link href="/purchased-articles">
-            <i>
-              <FontAwesomeIcon className={styles.ordinaryIcon} icon={faBook} />
-            </i>
-          </Link>
-          <Link href="/articles-you-wrote">
+          <Link href={settings.path1}>
             <i>
               <FontAwesomeIcon
                 className={styles.ordinaryIcon}
-                icon={faFeather}
+                icon={settings.icon1}
+              />
+            </i>
+          </Link>
+          <Link href={settings.path2}>
+            <i>
+              <FontAwesomeIcon
+                className={styles.ordinaryIcon}
+                icon={settings.icon2}
               />
             </i>
           </Link>

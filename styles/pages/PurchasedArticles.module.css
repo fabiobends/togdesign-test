@@ -1,0 +1,16 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2em;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* background: white; */
+}
+
+.purchasedArticlesContainer {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}

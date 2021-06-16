@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 import styles from "../styles/pages/Dashboard.module.css";
 import UserAreaStatistics from "./components/UserAreaStatistics";
 import userAreaWrapper from "./shared/userAreaWrapper";
@@ -42,7 +42,7 @@ function Dashboard() {
           </table>
         </div>
       </div>
-      <UserAreaStatistics />
+      <UserAreaStatistics path="/dashboard" />
     </div>
   );
 }

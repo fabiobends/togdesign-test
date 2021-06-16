@@ -1,0 +1,36 @@
+.articlesContainer {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2em;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* background: white; */
+}
+
+.articlesContainer table {
+  margin-left: 0.5em;
+  margin-top: 1.2em;
+  font-size: 14px;
+  border-collapse: separate;
+}
+
+.articlesContainer th,
+.articlesContainer td {
+  padding: 10px 0;
+  text-align: left;
+  vertical-align: top;
+  border-left: 90px solid var(--slightly-white);
+}
+
+.articlesContainer tr > td:first-child,
+.articlesContainer tr > th:first-child {
+  border: 0px;
+  width: 200px;
+  text-justify: start;
+}
+
+.articlesContainer tr {
+  width: 100%;
+}
