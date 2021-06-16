@@ -8,7 +8,7 @@ This is a challenge project from [Tog Design](https://tog.design) developer team
 ## 📷 Some screenshots
 __Home page__
 <p align="center">
- <img src=".github/home_page_tog.png" alt="See the articles" />
+ <img src=".github/home_page_tog_new.png" alt="See the articles" />
 </p>
 
 __Sign In page__
