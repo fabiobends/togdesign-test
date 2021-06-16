@@ -13,13 +13,17 @@ __Home page__
 
 __Sign In page__
 <p align="center">
- <img src=".github/login_page_tog.png" alt="Sign in" />
+ <img src=".github/login_page_tog.png" alt="Sign in Page" />
 </p>
-
 
 __Dashboard page__
 <p align="center">
- <img src=".github/dashboard_page_tog.png" alt="Sign in" />
+ <img src=".github/dashboard_page_tog.png" alt="Dashboard page" />
+</p>
+
+__Posting article with image__
+<p align="center">
+ <img src=".github/post_article_with_image.png" alt="Post an article with image" />
 </p>
 
 ## ⭐ Objectives
@@ -27,7 +31,6 @@ __Dashboard page__
 - Get the challenge done.
 - Use modern front-end concepts.
 - Get hired! (of course)
-- ... _More content soon_
 
 ## ⚛️ React.js concepts
 
@@ -43,7 +46,6 @@ This repo is based in:
 - [Node.js](https://nodejs.org/)
 - [Next.js](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- ... _Stay tuned for more_
 
 ## 📁 Libraries
 
@@ -54,7 +56,7 @@ This repo is based in:
 - [date-fns](https://date-fns.org)
 - [json-server](https://www.npmjs.com/package/json-server)
 - [concurrently](https://www.npmjs.com/package/concurrently)
-- ... _More_
+- [form-data](hhtps://www.npmjs.com/package/form-data)
 
 ## 📋 Prototype
 
