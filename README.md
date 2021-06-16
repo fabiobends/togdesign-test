@@ -56,7 +56,7 @@ This repo is based in:
 - [date-fns](https://date-fns.org)
 - [json-server](https://www.npmjs.com/package/json-server)
 - [concurrently](https://www.npmjs.com/package/concurrently)
-- [form-data](hhtps://www.npmjs.com/package/form-data)
+- [form-data](https://www.npmjs.com/package/form-data)
 
 ## 📋 Prototype
 
