@@ -1,3 +1,5 @@
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AxiosResponse } from "axios";
 import Head from "next/head";
 import Link from "next/link";
@@ -34,6 +36,11 @@ export default function Article() {
           <Head>
             <title>{article.title}</title>
           </Head>
+          <Link href="/">
+            <i>
+              <FontAwesomeIcon icon={faTimes} />
+            </i>
+          </Link>
           <img src={article.url_image} alt={article.title} />
           <h1>{article.title}</h1>
           <p>{article.content}</p>
