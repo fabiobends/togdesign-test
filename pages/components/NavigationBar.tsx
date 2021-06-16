@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "../../styles/components/NavigationBar.module.css";
 
-export default function NavigationBar() {
+export default function NavigationBar({ writeNowFlag = true }) {
   const [token, setToken] = useState<string>("");
 
   useEffect(() => {
@@ -14,9 +14,15 @@ export default function NavigationBar() {
 
   return (
     <nav className={styles.nav}>
-      <img className={styles.logo} src="assets/tog_logo.png" alt="Tog Design" />
+      <Link href="/">
+        <img
+          className={styles.logo}
+          src="assets/tog_logo.png"
+          alt="Tog Design"
+        />
+      </Link>
       <div>
-        {token && (
+        {token && writeNowFlag && (
           <Link href="/create">
             <button className={styles.writeNowButton}>Write Now</button>
           </Link>

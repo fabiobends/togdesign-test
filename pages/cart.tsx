@@ -25,7 +25,7 @@ export default function Cart() {
         <title>Your cart</title>
       </Head>
       <div className={styles.navbar}>
-        <NavigationBar />
+        <NavigationBar writeNowFlag={false} />
       </div>
       <div className={styles.yourCart}>
         <p className={styles.title}>Your cart</p>
