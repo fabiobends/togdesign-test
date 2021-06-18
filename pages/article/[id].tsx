@@ -4,25 +4,23 @@ import { AxiosResponse } from "axios";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import styles from "../../styles/pages/Article.module.css";
-import { cardProps } from "../../types";
+import { ArticleProps } from "../../types";
 import api from "../../utils/api";
 import ArticleInfo from "../components/ArticleInfo";
 
 export default function Article() {
+  const { addArticle, formatter } = useContext(CartContext);
   const router = useRouter();
-  const [article, setArticle] = useState<cardProps>();
+  const [article, setArticle] = useState<ArticleProps>();
   const { id } = router.query;
-  const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
 
   useEffect(() => {
     api
       .get(`article/${id}`)
-      .then((response: AxiosResponse<cardProps>) => {
+      .then((response: AxiosResponse<ArticleProps>) => {
         // console.log(response.data);
         setArticle(response.data);
       })
@@ -48,11 +46,11 @@ export default function Article() {
             <p>To continue reading, you need to buy this article</p>
             <p>
               You can continue this reading for only R${" "}
-              {formatter.format(article.price)} paid on your card.
+              {formatter(article.price)} paid on your card.
             </p>
           </div>
           <Link href="/cart">
-            <button>Buy item</button>
+            <button onClick={() => addArticle(article)}>Buy item</button>
           </Link>
           <ArticleInfo {...article} />
         </div>

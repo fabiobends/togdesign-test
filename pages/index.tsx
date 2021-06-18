@@ -4,19 +4,19 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/pages/Home.module.css";
-import { cardProps } from "../types";
+import { ArticleProps } from "../types";
 import api from "../utils/api";
 import HomeCard from "./components/HomeCard";
 import NavigationBar from "./components/NavigationBar";
 
 export default function Home() {
   const router = useRouter();
-  const [cards, setCards] = useState<cardProps[]>();
+  const [cards, setCards] = useState<ArticleProps[]>();
 
   useEffect(() => {
     api
       .get("/articles")
-      .then((response: AxiosResponse<cardProps[]>) => {
+      .then((response: AxiosResponse<ArticleProps[]>) => {
         console.log(response.data);
         setCards(response.data);
       })

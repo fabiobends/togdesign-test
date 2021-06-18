@@ -1,7 +1,7 @@
 import styles from "../../styles/components/ArticleInfo.module.css";
-import { cardProps } from "../../types";
+import { ArticleProps } from "../../types";
 
-export default function ArticleInfo({ themes, author }: cardProps) {
+export default function ArticleInfo({ themes, author }: ArticleProps) {
   return (
     <div className={styles.container}>
       <div className={styles.author}>

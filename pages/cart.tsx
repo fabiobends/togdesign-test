@@ -4,10 +4,14 @@ import Cookie from "js-cookie";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../contexts/CartContext";
 import styles from "../styles/pages/Cart.module.css";
 import NavigationBar from "./components/NavigationBar";
 
 export default function Cart() {
+  const { articles, removeArticle, formatter } = useContext(CartContext);
+  const [totalAmount, setTotalAmount] = useState<number>();
   const router = useRouter();
 
   function handleCheckout() {
@@ -19,6 +23,12 @@ export default function Cart() {
     }
   }
 
+  useEffect(() => {
+    let amount = 0;
+    articles.forEach((ele) => amount += ele.price);
+    setTotalAmount(amount);
+  }, [totalAmount]);
+
   return (
     <div className={styles.cartContainer}>
       <Head>
@@ -29,42 +39,45 @@ export default function Cart() {
       </div>
       <div className={styles.yourCart}>
         <p className={styles.title}>Your cart</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Article</th>
-              <th>Author</th>
-              <th>Publisher</th>
-              <th>Value</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>What was the trend in 2020 and you didn't use it</td>
-              <td>Daniel Alves</td>
-              <td>Tog Design</td>
-              <td>R$ 10,90</td>
-              <td className={styles.trashButton}>
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </td>
-            </tr>
-            <tr>
-              <td>Where can you apply design and you didn't use it</td>
-              <td>Daniel Alves</td>
-              <td>Tog Design</td>
-              <td>R$ 18,90</td>
-              <td className={styles.trashButton}>
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div className={styles.divider}></div>
-        <div className={styles.subTotalCart}>
-          <span>Subtotal</span>
-          <p>R$ 29,90</p>
-        </div>
+        {articles ? (
+          <>
+            <table>
+              <thead>
+                <tr>
+                  <th>Article</th>
+                  <th>Author</th>
+                  <th>Publisher</th>
+                  <th>Value</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {articles &&
+                  articles.map((article) => (
+                    <tr>
+                      <td>{article.title}</td>
+                      <td>{article.author}</td>
+                      <td>{article.publisher}</td>
+                      <td>{formatter(article.price)}</td>
+                      <td
+                        onClick={() => removeArticle(article)}
+                        className={styles.trashButton}
+                      >
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+            <div className={styles.divider}></div>
+            <div className={styles.subTotalCart}>
+              <span>Subtotal</span>
+              <p>{formatter(totalAmount)}</p>
+            </div>
+          </>
+        ) : (
+          <p>There is no article in the cart</p>
+        )}
       </div>
       <div className={styles.resume}>
         <div className={styles.wrapper}>
@@ -77,12 +90,12 @@ export default function Cart() {
           />
           <div>
             <span>Subtotal</span>
-            <p className={styles.subTotal}>R$ 29,80</p>
+            <p className={styles.subTotal}>{formatter(totalAmount)}</p>
           </div>
           <div className={styles.divider}></div>
           <div>
             <span>Total</span>
-            <p className={styles.totalAmount}>R$ 29,80</p>
+            <p className={styles.totalAmount}>{formatter(totalAmount)}</p>
           </div>
           <div className={styles.spacer}></div>
           <button onClick={handleCheckout} className={styles.checkout}>

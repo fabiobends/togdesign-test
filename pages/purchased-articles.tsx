@@ -1,23 +1,27 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../contexts/CartContext";
 import styles from "../styles/pages/PurchasedArticles.module.css";
-import { cardProps } from "../types";
+import { ArticleProps } from "../types";
 import api from "../utils/api";
 import HomeCard from "./components/HomeCard";
 import UserAreaStatistics from "./components/UserAreaStatistics";
 import userAreaWrapper from "./shared/userAreaWrapper";
 
 function PurchasedArticle() {
-  const [cards, setCards] = useState<cardProps[]>();
+  const { articles } = useContext(CartContext);
 
-  api.get("/articles").then((response) => setCards(response.data));
   return (
     <div className={styles.container}>
       <Head>
         <title>Purchased articles</title>
       </Head>
       <div className={styles.purchasedArticlesContainer}>
-        {cards && cards.map((element) => <HomeCard {...element} />)}
+        {articles ? (
+          articles.map((element) => <HomeCard {...element} />)
+        ) : (
+          <p>You didn't buy any article</p>
+        )}
       </div>
       <UserAreaStatistics path="/purchased-articles" />
     </div>

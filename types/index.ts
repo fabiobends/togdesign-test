@@ -5,7 +5,7 @@ export interface rowStatsProps {
   color: string;
 }
 
-export interface cardProps {
+export interface ArticleProps {
   id: string;
   title: string;
   content: string;
@@ -13,5 +13,6 @@ export interface cardProps {
   url_image: string;
   publisher: string;
   author: string;
+  publication_date: string;
   themes: string[];
 }
