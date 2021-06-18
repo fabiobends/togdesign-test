@@ -46,6 +46,7 @@ This repo is based in:
 - [Node.js](https://nodejs.org/)
 - [Next.js](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
+- [Yarn](https://yarnpkg.com/)
 
 ## 📁 Libraries
 
