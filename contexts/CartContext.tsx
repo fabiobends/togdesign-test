@@ -5,6 +5,8 @@ interface CartContextData {
   articles: ArticleProps[];
   addArticle: (article: ArticleProps) => void;
   removeArticle: (article: ArticleProps) => void;
+  purchasedArticles: ArticleProps[];
+  submitCheckout: () => void;
   formatter: (amount: number) => string;
 }
 
@@ -15,7 +17,9 @@ export const CartContext = createContext({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps) {
   const [articles, setArticles] = useState<ArticleProps[]>([]);
-  const [totalAmount, setTotalAmount] = useState<number>(0.0);
+  const [purchasedArticles, setPurchasedArticles] = useState<ArticleProps[]>(
+    []
+  );
 
   function addArticle(article: ArticleProps) {
     setArticles((prev) => {
@@ -30,6 +34,11 @@ export function CartProvider({ children }: CartProviderProps) {
     });
   }
 
+  function submitCheckout() {
+    setPurchasedArticles((prev)=>[...prev, ...articles]);
+    setArticles([]);
+  }
+
   function formatter(amount: number): string {
     const formatterObj = new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -40,7 +49,14 @@ export function CartProvider({ children }: CartProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ articles, addArticle, removeArticle, formatter }}
+      value={{
+        articles,
+        addArticle,
+        removeArticle,
+        purchasedArticles,
+        submitCheckout,
+        formatter,
+      }}
     >
       {children}
     </CartContext.Provider>

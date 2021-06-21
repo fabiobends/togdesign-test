@@ -10,7 +10,7 @@ import styles from "../styles/pages/Cart.module.css";
 import NavigationBar from "./components/NavigationBar";
 
 export default function Cart() {
-  const { articles, removeArticle, formatter } = useContext(CartContext);
+  const { articles, removeArticle, formatter, submitCheckout } = useContext(CartContext);
   const [totalAmount, setTotalAmount] = useState<number>();
   const router = useRouter();
 
@@ -18,6 +18,8 @@ export default function Cart() {
     const token = Cookie.get("token");
     if (token) {
       router.replace("/dashboard");
+      submitCheckout();
+      setTotalAmount(0.0);
     } else {
       router.replace("/login");
     }

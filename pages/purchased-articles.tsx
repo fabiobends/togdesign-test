@@ -9,7 +9,7 @@ import UserAreaStatistics from "./components/UserAreaStatistics";
 import userAreaWrapper from "./shared/userAreaWrapper";
 
 function PurchasedArticle() {
-  const { articles } = useContext(CartContext);
+  const { purchasedArticles } = useContext(CartContext);
 
   return (
     <div className={styles.container}>
@@ -17,8 +17,8 @@ function PurchasedArticle() {
         <title>Purchased articles</title>
       </Head>
       <div className={styles.purchasedArticlesContainer}>
-        {articles ? (
-          articles.map((element) => <HomeCard {...element} />)
+        {purchasedArticles ? (
+          purchasedArticles.map((element) => <HomeCard {...element} />)
         ) : (
           <p>You didn't buy any article</p>
         )}
